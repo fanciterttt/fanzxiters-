@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FanzTeam Login</title>
+  <style>
+    :root {
+      --neon-color: lime;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #000;
+      color: white;
+      text-align: center;
+    }
+
+    .page {
+      display: none;
+      padding: 20px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    .login-box {
+      margin-top: 20vh;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px red;
+      background-color: #111;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      width: 80%;
+      max-width: 300px;
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 0 10px red;
+    }
+
+    h1 {
+      color: var(--neon-color);
+      text-shadow: 0 0 10px var(--neon-color);
+    }
+
+    .color-buttons {
+      margin: 20px 0;
+    }
+
+    .color-buttons span {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin: 5px;
+      cursor: pointer;
+      box-shadow: 0 0 5px white;
+      border: 2px solid white;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .menu a {
+      background-color: #111;
+      color: white;
+      border: 2px solid var(--neon-color);
+      border-radius: 10px;
+      padding: 12px;
+      width: 180px;
+      text-align: center;
+      box-shadow: 0 0 10px var(--neon-color);
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .menu a:hover {
+      background-color: var(--neon-color);
+      color: black;
+    }
+
+    .chat-admin {
+      background-color: var(--neon-color);
+      color: black;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-radius: 25px;
+      margin-top: 30px;
+      box-shadow: 0 0 10px var(--neon-color);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    footer {
+      margin-top: 20px;
+      color: gray;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN PAGE -->
+  <div id="loginPage" class="page active">
+    <div class="login-box">
+      <h1>🔐 Login Key FanzXiters</h1>
+      <input type="text" id="keyInput" placeholder="Masukkan Key FANZ-XXXX">
+      <br>
+      <button onclick="checkKey()">Login</button>
+    </div>
+    <footer>© 2025 FanzTeam 🔥</footer>
+  </div>
+
+  <!-- MENU PAGE -->
+  <div id="menuPage" class="page">
+    <h1>⚡ MENU FANZ XITERS ⚡</h1>
+
+    <div class="color-buttons">
+      <span style="background:red" onclick="setColor('red')"></span>
+      <span style="background:orange" onclick="setColor('orange')"></span>
+      <span style="background:yellow" onclick="setColor('yellow')"></span>
+      <span style="background:lime" onclick="setColor('lime')"></span>
+      <span style="background:cyan" onclick="setColor('cyan')"></span>
+      <span style="background:purple" onclick="setColor('purple')"></span>
+      <span style="background:magenta" onclick="setColor('magenta')"></span>
+    </div>
+
+    <div class="menu">
+      <a href="https://whatsapp.com/channel/0029Vb47N9LFcovzx7dBDR0V" target="_blank">✅ Testimoni Pembelian</a>
+      <a href="https://www.mediafire.com/file/cqgo1y5zbyiis51/DATA_AIMBOT_%255B_18%2525_%255D_%2540FanzXiters.zip/file" target="_blank">🚀 Download File Gratis</a>
+      <a href="https://whatsapp.com/channel/0029Vb47N9LFcovzx7dBDR0V" target="_blank">📢 Saluran FanzXiters</a>
+      <a href="https://saweria.co/fanzxiters" target="_blank">❤️ Donet/Support</a>
+    </div>
+
+    <a class="chat-admin" href="https://wa.me/6283180931475?text=bng+beli+permen+😋" target="_blank">KLIK UNTUK ORDER</a>
+  </div>
+
+  <script>
+    function checkKey() {
+      const key = document.getElementById('keyInput').value.trim();
+      const validKeys = ['FanzXiters'];
+      if (validKeys.includes(key)) {
+        document.getElementById('loginPage').classList.remove('active');
+        document.getElementById('menuPage').classList.add('active');
+      } else {
+        alert('Key salah!');
+      }
+    }
+
+    function setColor(color) {
+      document.documentElement.style.setProperty('--neon-color', color);
+    }
+  </script>
+
+</body>
+</html>
